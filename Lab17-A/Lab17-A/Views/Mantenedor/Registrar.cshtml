@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sing-In</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+        .btn-color {
+            background-color: #0e1c36;
+            color: #fff;
+        }
+
+        .profile-image-pic {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .cardbody-color {
+            background-color: #ebf2fa;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card my-5">
+                    <form class="card-body cardbody-color" action="@Url.Action("Login", "Mantenedor")" method="post">
+                        <h2 class="text-center text-dark mt-3 fw-bold">Registro</h2>
+
+                        <div class="text-center">
+                            <img src="https://2.bp.blogspot.com/-pd043W_8bKo/VbgKomRegTI/AAAAAAAAA2s/dhMRqrtfjlo/s1600/yo.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="100px" alt="profile">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="Username" name="perfil"  placeholder="Nombre de usuario">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="password" name="constraseña" placeholder="Contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="confirmpassword" name="ConfirmarContraseña" placeholder="Confirmar Contraseña">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" href="@Url.Action("Login", "Mantenedor")"  class="btn btn-color px-5 mb-3 w-100">Registrarme</button>
+                        </div>
+                        <div id="emailHelp" class="form-text text-center mb-3 text-dark">
+                            ¿Ya estás registrado? <a href="@Url.Action("Login", "Mantenedor")" class="text-dark fw-bold"> Inicia sesión </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

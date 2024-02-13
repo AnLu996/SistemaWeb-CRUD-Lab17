@@ -1,0 +1,49 @@
+﻿@model PeliculaModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar Película</h5>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+            <input type="hidden" class="form-control" asp-for="IdPelicula">
+            <input type="hidden" class="form-control" asp-for="Idioma">
+            <input type="hidden" class="form-control" asp-for="Genero">
+            <div class="mb-3">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" asp-for="Titulo">
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sipnosis</label>
+                <input type="text" class="form-control" asp-for="Sipnosis">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Clasificacion</label>
+                <input type="text" class="form-control" asp-for="Clasificacion">
+                <span asp-validation-for="Clasificacion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Estudio de Filmacion</label>
+                <input type="text" class="form-control" asp-for="EstudioFilmacion">
+                <span asp-validation-for="EstudioFilmacion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Estado</label>
+                <input type="text" class="form-control" asp-for="Estado">
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de Emisión</label>
+                <input type="date" class="form-control" asp-for="FechaEmision">
+                <span asp-validation-for="FechaEmision" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="bi bi-floppy"></i> Guardar </button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista </a>
+        </form>
+    </div>
+</div>
+
+

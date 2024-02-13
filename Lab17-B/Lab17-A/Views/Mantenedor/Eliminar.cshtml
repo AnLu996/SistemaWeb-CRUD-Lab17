@@ -1,0 +1,22 @@
+﻿@model VacunaModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Eliminar Vacuna</h5>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Mantenedor" method="post">
+            <input type="hidden" class="form-control" asp-for="IdVacuna">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar la vacuna : @Html.DisplayTextFor(m => m.Nombre)?
+            </div>
+            
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Eliminar</button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning"><i class="bi bi-x-lg"></i> Cancelar </a>
+        </form>
+    </div>
+</div>
+

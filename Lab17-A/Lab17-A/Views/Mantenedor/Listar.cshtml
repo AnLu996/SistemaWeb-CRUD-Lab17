@@ -1,0 +1,47 @@
+﻿@model List<PeliculaModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Lista de Películas</h5>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nueva Película </a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Sipnosis</th>
+                    <th>Clasificación</th>
+                    <th>Estudio de Filmación</th>
+                    <th>Estado</th>
+                    <th>Fecha de Emisión</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Titulo</td>
+                        <td>@item.Sipnosis</td>
+                        <td>@item.Clasificacion</td>
+                        <td>@item.EstudioFilmacion</td>
+                        <td>@item.Estado</td>
+                        <td>@item.FechaEmision.ToString("d")</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-primary btn-sm" asp-route-IdPelicula="@item.IdPelicula"><i class="bi bi-pencil-square"></i> Editar </a>
+                        </td>
+                        <td>
+                            <a asp-action="Eliminar" asp-controller="Mantenedor" class="btn btn-danger btn-sm" asp-route-IdPelicula="@item.IdPelicula"><i class="bi bi-trash"></i> Eliminar </a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

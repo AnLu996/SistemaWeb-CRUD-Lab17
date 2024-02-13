@@ -1,0 +1,34 @@
+﻿@model VacunaModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar Vacuna</h5>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+            <input type="hidden" class="form-control" asp-for="IdVacuna">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" asp-for="Nombre">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de Vencimiento</label>
+                <input type="date" class="form-control" asp-for="FechaVencimiento">
+                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Laboratorio</label>
+                <input type="text" class="form-control" asp-for="Laboratorio">
+                <span asp-validation-for="Laboratorio" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-success"><i class="bi bi-floppy"></i> Guardar </button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista </a>
+        </form>
+    </div>
+</div>
+
+

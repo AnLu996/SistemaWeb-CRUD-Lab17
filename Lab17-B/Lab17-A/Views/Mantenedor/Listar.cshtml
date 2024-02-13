@@ -1,0 +1,43 @@
+﻿@model List<VacunaModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Lista de Películas</h5>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nueva Vacuna </a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha de Fabricación</th>
+                    <th>Fecha de Vencimiento</th>
+                    <th>Laboratorio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.FechaFabricacion.ToString("d")</td>
+                        <td>@item.FechaVencimiento.ToString("d")</td>
+                        <td>@item.Laboratorio</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-primary btn-sm" asp-route-IdVacuna="@item.IdVacuna"><i class="bi bi-pencil-square"></i> Editar </a>
+                        </td>
+                        <td>
+                            <a asp-action="Eliminar" asp-controller="Mantenedor" class="btn btn-danger btn-sm" asp-route-IdVacuna="@item.IdVacuna"><i class="bi bi-trash"></i> Eliminar </a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
